@@ -1,13 +1,7 @@
 body{
-    font-family: arial , sans-serif;;
+    font-family: arial , sans-serif;
 }
-.weather-app{
-    max-width: 600px;
-    margin: 30px auto;
-    padding: 20px;
-    border: 1px solid #dadde1;
-    border-radius: 5px;
-}
+
 h1{
     color: rgb(135,135,135);
     display: block;
@@ -25,9 +19,18 @@ li{
     color: rgb(154, 160, 166);
     margin: 0;
     padding: 0;
-    font-family: arial,sans-serif;
-    font-size: 15px; 
-    font-weight :400;
-    height: 16px;
-    line-height :16px;
+    font-size: 16px; 
+    font-weight :100;
+    line-height :19px;
+}
+.weather-app{
+    
+    padding: 20px;
+    border: 1px solid #dadde1;
+    border-radius: 5px;
+}
+.weather-app-rapper{
+    max-width: 600px;
+    margin: 30px auto;
+    
 }
