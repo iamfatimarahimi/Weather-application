@@ -1,8 +1,8 @@
 function formatDate(timestamp){
     let date = new Date(timestamp);
     let hours = date.getHours();
-    if (minuets <10){
-        minuets= `0${hours}`;
+    if (hours <10){
+        hours= `0${hours}`;
     }
     let minuets = date.getMinutes();
     if (minuets <10){
@@ -29,4 +29,5 @@ function displayTempreture(response){
     windElement.innerHTML =Math.round(response.data.wind.speed);
     dateElement.innerHTML = formatDate(response.data.dt*1000)
 };
+
  axios.get(apiUrl).then(displayTempreture);
