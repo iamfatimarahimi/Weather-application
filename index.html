@@ -20,6 +20,26 @@
     <div class="container">
       <div class="weather-app-wrapper">
         <div class="weather-app">
+          <form id="search-form" class="mb-3">
+            <div class="row">
+              <div class="col-9">
+                <input
+                  type="search"
+                  placeholder="Search..."
+                  class="form-control"
+                  id="city-input"
+                  autocomplete="off"
+                />
+              </div>
+              <div class="col-3">
+                <input
+                  type="submit"
+                  value="search"
+                  class="btn btn-primary w-100"
+                />
+              </div>
+            </div>
+          </form>
           <!-- overview -->
           <div class="overview">
             <h1 id="city">London</h1>
@@ -40,7 +60,7 @@
                   id="icon"
                 />
                 <div>
-                  <strong id="temperature">12 </strong
+                  <strong id="temperature"> </strong
                   ><span class="units">°C|<a href="#">°F</a> </span>
                 </div>
               </div>
