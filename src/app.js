@@ -12,10 +12,10 @@ function formatDate(timestamp){
     let day = days[date.getDay()];
     return `${day} ${hours}:${minuets}`
 }
-    // let apiKey = `57a9ed06d8a8a6f501b0cd3f20bdc49a`;   
-    // let city = "New York";
-    // let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=57a9ed06d8a8a6f501b0cd3f20bdc49a&units=metric`;
-    // axios.get(apiUrl).then(displayTempreture);
+    let apiKey = `57a9ed06d8a8a6f501b0cd3f20bdc49a`;   
+    let city = "New York";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=57a9ed06d8a8a6f501b0cd3f20bdc49a&units=metric`;
+    axios.get(apiUrl).then(displayTempreture);
 
 
 function displayTempreture(response){
@@ -38,12 +38,12 @@ function displayTempreture(response){
 
  
 
-function search (city){
-    let apiKey = `57a9ed06d8a8a6f501b0cd3f20bdc49a`;
-    let city = "New York";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=57a9ed06d8a8a6f501b0cd3f20bdc49a&units=metric`;
-    axios.get(apiUrl).then(displayTempreture);
-}
+// function search (city){
+//     let apiKey = `57a9ed06d8a8a6f501b0cd3f20bdc49a`;
+//     let city = "New York";
+//     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=57a9ed06d8a8a6f501b0cd3f20bdc49a&units=metric`;
+//     axios.get(apiUrl).then(displayTempreture);
+// }
 
 search("Paris")
 function handleSubmit(event){
@@ -51,5 +51,14 @@ function handleSubmit(event){
     let cityInput = document.querySelector("#city-input")
     search(cityInput.value)
 }
+ function dispalyFarenheitTemp(event){
+    event.preventDefault();
+    alert("hello")
+ }
  let form = document.querySelector("#search-form");
- form.addEventListener("submit",handleSubmit)
+ form.addEventListener("submit",handleSubmit);
+
+
+ let farenheitlink = document.querySelector("#farenheit");
+
+ farenheitlink.addEventListener("click" , dispalyFarenheitTemp)
