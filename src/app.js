@@ -12,10 +12,12 @@ function formatDate(timestamp){
     let day = days[date.getDay()];
     return `${day} ${hours}:${minuets}`
 }
+function search(city){
     let apiKey = `57a9ed06d8a8a6f501b0cd3f20bdc49a`;   
-    let city = "New York";
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=57a9ed06d8a8a6f501b0cd3f20bdc49a&units=metric`;
     axios.get(apiUrl).then(displayTempreture);
+}
+
 
 
 function displayTempreture(response){
