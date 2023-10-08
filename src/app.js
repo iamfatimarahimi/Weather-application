@@ -8,10 +8,41 @@ function formatDate(timestamp){
     if (minuets <10){
         minuets= `0${minuets}`;
     }
-    let days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+    let days = [ "Sunday","Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
     let day = days[date.getDay()];
     return `${day} ${hours}:${minuets}`
 }
+
+
+function displayForecsat(){
+    let forecastElement = document.querySelector("#forecast");
+
+    let forecastHTML = `<div class="row"> `;
+    let days = ["Thursday", "Friday", "Saturday" , "Sunday"];
+    days.forEach(function(day){
+        forecastHTML = forecastHTML + 
+    `
+              <div class="col-2">
+                <div class="weather-forcast-date">${day}</div>
+                
+                <img
+                  src="https://openweathermap.org/img/wn/04d@2x.png"
+                  alt=""
+                  width="42px"
+                />
+                <br />
+                <div class="weather-forecast-temp">
+                  <span class="weather-forecast-max">18°</span>
+                  <span class="weather-forecast-min">12°</span>
+                </div>
+              </div>
+    `;
+    })
+    forecastHTML = forecastHTML + `</div>`;
+    forecastElement.innerHTML = forecastHTML;
+}
+
+
 function search(city){
     let apiKey = `57a9ed06d8a8a6f501b0cd3f20bdc49a`;   
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
@@ -63,6 +94,7 @@ function handleSubmit(event){
         temperatureElement.innerHTML = Math.round(celsiusTemperature);
       }
  let celsiusTemperature = null;
+ 
  let form = document.querySelector("#search-form");
  form.addEventListener("submit",handleSubmit);
 
@@ -74,3 +106,4 @@ function handleSubmit(event){
       celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
       search("New York");
+      displayForecsat();
