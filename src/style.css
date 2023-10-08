@@ -76,3 +76,18 @@ li::first-letter{
 .float-left .active:hover {
     text-decoration: none;
 }
+.weather-forecast{
+    margin-top: 20px;
+    text-align: center;
+    color: black;
+}
+.weather-forcast-date {
+    font-size: 15px;
+    opacity: 0.5;
+}
+.weather-forecast-min{
+    opacity: 0.5;
+}
+.weather-forecast-temp{
+    font-size: 13px;
+}
